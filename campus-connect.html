@@ -37,10 +37,10 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="#hero"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
-        <li><a href="#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
+        <li><a href="index.html#hero"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
+        <li><a href="index.html#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
+        <li><a href="index.html#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
+        <li><a href="index.html#portfolio"><i class="bi bi-images navicon"></i><span>Portfolio</span></a></li>
       </ul>
     </nav>
 
@@ -111,37 +111,72 @@
               </p>
 
               <p>
-                I was the full stack developer for this project and created both the Frontend and Backend of the website which had multiple requirements as deliverables.
-                Technical Requirements:
-
-                The planning phase:
-                  For planning the project I used Figma for design work
-                  https://dbdiagram.io/ for database planning
-
-                  Next development was done using Visual Studio Code as the IDE 
-
-                  
-                  1. The design of the database must follow the design process: business
-                  operations/constraints, ER-model, the relational model, normalization, implementation,
-                  indexing, enforcing general constraints (e.g., triggers), etc.
-                  2. The database must include at least 5 relational tables.
-                  3. The application must have a browser-based interface and can be deployed on the Internet.
-                  Moreover, the application should have a professional-looking interface that is user-
-                  friendly.
-                  4. The website and database must be able to support multiple concurrent users.
-                  5. Sample data should be included, e.g., 10 uses, 5 RSOs, 20 events, 10 comments, 10 SQL
-                  queries…
-                  6. Programming languages that can be used for the project: HTML, Javascript, PHP, Java, CSS,
-                  c#, and stored procedures. DBMS’s: Oracle, SQL Server, and MySQL. Other languages and
-                  DBMSs are generally allowed provided that you must begin the design and
-                  implementation in SQL and must be able to modify the code in the platforms of your
-                  choice to implement required by the project.
-                  7. All constraints must be enforced using the database’s features that support those
-                  constraints, e.g., triggers.
-                  8. Advanced features include, but not limited to, event feeds from the university’s events
-                  system (e.g., from https://events.ucf.edu), social network integration, crash recovery
-                  policy/procedures, security, index-only/composite search-key indices, etc.
+                I was the full stack developer for this project and created both the Frontend and Backend of the website which had multiple features, and a large database functionality.
+                This project tested my ability to great a large and secure database as well as a attractive and intuitive frontend.
               </p>
+
+              <p>Technical Stack Overview:</p>
+              <ul>
+                <li>React - Frontend</li>
+                <li>PostgreSQL - Database</li>
+                <li>Heroku - App Deployment</li>
+                <li>Postman - API testing</li>
+              </ul>
+
+              <p>Feature Overview:</p>
+              <ul>
+                <li>Password Hashing</li>
+                <li>CRUD Actions</li>
+              </ul>
+
+              <p>Diagram & Planning:</p>
+              <ul>
+                <li>Frontend prototyping - Figma</li>
+                <li>Diagrams - Draw.io</li>
+              </ul>
+
+              <h4>Figma Planning Designs</h4>
+              <div class="portfolio-details-slider swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 600,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": "auto",
+                    "navigation": {
+                      "nextEl": ".swiper-button-next",
+                      "prevEl": ".swiper-button-prev"
+                    },
+                    "pagination": {
+                      "el": ".swiper-pagination",
+                      "type": "bullets",
+                      "clickable": true
+                    }
+                  }
+                </script>
+                <div class="swiper-wrapper align-items-center">
+                  <div class="swiper-slide">
+                    <img src="assets/img/portfolio/campus-connect/figma/landing.jpg" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="assets/img/portfolio/campus-connect/figma/login.jpg" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="assets/img/portfolio/campus-connect/figma/signup.jpg" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="assets/img/portfolio/campus-connect/figma/home.jpg" alt="">
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="assets/img/portfolio/campus-connect/figma/search.jpg" alt="">
+                  </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+              </div>
 
             </div>
           </div>
