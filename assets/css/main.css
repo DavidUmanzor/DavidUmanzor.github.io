@@ -41,13 +41,27 @@
 
 /* Dark Mode Styles */
 body.dark-mode {
-  --nav-color: #ffffff;
   --background-color: #121212; /* Dark background for the body */
   --default-color: #ffffff; /* Light text */
   --heading-color: #e0e0e0; /* Light heading text */
   --accent-color: #bb86fc; /* Accent color for dark mode */
   --surface-color: #1e1e1e; /* Dark surface for sections/cards */
   --contrast-color: #ffffff; /* Text contrast color */
+}
+
+body.dark-mode {
+  --nav-color: #ffffff;
+  --nav-hover-color: #bb86fc; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-dropdown-hover-color: #bb86fc; /* Accent color for dark mode */
+}
+
+body.dark-mode .btn-primary {
+  --bs-btn-hover-bg: #9f72d7;
+  --bs-btn-hover-border-color: #9f72d7;
+  --bs-btn-bg: #bb86fc;
+  --bs-btn-border-color: #bb86fc;
+  --bs-btn-active-bg: #bb86fc;
+  --bs-btn-active-border-color: #bb86fc;
 }
 
 /* Dark Mode for light-background sections */
