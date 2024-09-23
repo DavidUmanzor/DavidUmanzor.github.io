@@ -1,10 +1,3 @@
-/**
-* Template Name: MyResume
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 (function() {
   "use strict";
@@ -20,6 +13,23 @@
     headerToggleBtn.classList.toggle('bi-x');
   }
   headerToggleBtn.addEventListener('click', headerToggle);
+
+  // Dark Mode Toggle
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+  const darkModeIcon = darkModeToggle.querySelector('i');
+  
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    
+    // Change icon based on the current mode
+    if (document.body.classList.contains('dark-mode')) {
+      darkModeIcon.classList.replace('bi-moon', 'bi-sun');
+    } else {
+      darkModeIcon.classList.replace('bi-sun', 'bi-moon');
+    }
+  }
+  
+  darkModeToggle.addEventListener('click', toggleDarkMode);
 
   /**
    * Hide mobile nav on same-page/hash links

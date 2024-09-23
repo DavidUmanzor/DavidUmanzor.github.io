@@ -1,15 +1,3 @@
-/**
-* Template Name: MyResume
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Updated: Jun 29 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
-/*--------------------------------------------------------------
-# Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
---------------------------------------------------------------*/
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -40,7 +28,6 @@
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f9f9f9;
   --surface-color: #ffffff;
 }
 
@@ -50,6 +37,106 @@
   --heading-color: #ffffff;
   --surface-color: #252525;
   --contrast-color: #ffffff;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  --nav-color: #ffffff;
+  --background-color: #121212; /* Dark background for the body */
+  --default-color: #ffffff; /* Light text */
+  --heading-color: #e0e0e0; /* Light heading text */
+  --accent-color: #bb86fc; /* Accent color for dark mode */
+  --surface-color: #1e1e1e; /* Dark surface for sections/cards */
+  --contrast-color: #ffffff; /* Text contrast color */
+}
+
+/* Dark Mode for light-background sections */
+body.dark-mode .light-background {
+  --background-color: #1e1e1e; /* Darker background for light-background sections */
+  --surface-color: #2e2e2e; /* Slightly lighter than background */
+  --default-color: #e0e0e0; /* Light text */
+}
+
+body.container{
+  background-color: #1e1e1e;
+  overflow: clip;
+}
+
+body.section,
+body.dark-mode .card{
+  background-color: #412e4f;
+  color: white;
+  border-color: white;
+}
+
+body.dark-mode footer{
+  background-color: #1e1e1e; /* Darker backgrounds for header, footer, and nav */
+}
+
+body.dark-mode .skills-animation {
+  background-color: #2c2c2c; /* Background for skills */
+}
+
+body.dark-mode .progress-bar {
+  background-color: #3a3a3a; /* Progress bar background */
+}
+
+body.dark-mode section {
+  background-color: #1e1e1e; /* Dark background for sections */
+  color: #ffffff; /* Light text for sections */
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #ffffff; /* Light text for headings in sections */
+}
+
+body.dark-mode {
+  background-color: #252525; /* Dark background for containers */
+}
+
+/* Toggle Dark Mode Button */
+#dark-mode-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  border-radius: 50px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#dark-mode-toggle i {
+  transition: transform 0.3s ease;
+}
+
+/* Sun/Moon Icon for light/dark mode */
+body.dark-mode #dark-mode-toggle {
+  background-color: #ffb74d; /* Bright color for dark mode */
+  color: #272829;
+}
+
+body.dark-mode #dark-mode-toggle i {
+  transform: rotate(180deg);
+}
+
+#dark-mode-toggle:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Smooth scroll */
@@ -622,45 +709,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Stats Section
---------------------------------------------------------------*/
-.stats i {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  width: 54px;
-  height: 54px;
-  font-size: 24px;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-}
-
-.stats .stats-item {
-  margin-top: 10px;
-  width: 100%;
-  position: relative;
-  text-align: center;
-  z-index: 0;
-}
-
-.stats .stats-item span {
-  font-size: 36px;
-  display: block;
-  font-weight: 700;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-}
-
-.stats .stats-item p {
-  padding: 0;
-  margin: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 16px;
-}
-
-/*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
 .skills .progress {
@@ -858,296 +906,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
-.services .service-item {
-  background-color: var(--surface-color);
-  box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
-  height: 100%;
-  padding: 60px 30px;
-  text-align: center;
-  transition: 0.3s;
-  border-radius: 5px;
-}
-
-.services .service-item .icon {
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: ease-in-out 0.3s;
-  position: relative;
-}
-
-.services .service-item .icon i {
-  font-size: 36px;
-  transition: 0.5s;
-  position: relative;
-}
-
-.services .service-item .icon svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.services .service-item .icon svg path {
-  transition: 0.5s;
-  fill: color-mix(in srgb, var(--default-color), transparent 95%);
-}
-
-.services .service-item h3 {
-  font-weight: 700;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
-}
-
-.services .service-item p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.services .service-item:hover {
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
-}
-
-.services .service-item.item-cyan i {
-  color: #0dcaf0;
-}
-
-.services .service-item.item-cyan:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-cyan:hover .icon path {
-  fill: #0dcaf0;
-}
-
-.services .service-item.item-orange i {
-  color: #fd7e14;
-}
-
-.services .service-item.item-orange:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-orange:hover .icon path {
-  fill: #fd7e14;
-}
-
-.services .service-item.item-teal i {
-  color: #20c997;
-}
-
-.services .service-item.item-teal:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-teal:hover .icon path {
-  fill: #20c997;
-}
-
-.services .service-item.item-red i {
-  color: #df1529;
-}
-
-.services .service-item.item-red:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-red:hover .icon path {
-  fill: #df1529;
-}
-
-.services .service-item.item-indigo i {
-  color: #6610f2;
-}
-
-.services .service-item.item-indigo:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-indigo:hover .icon path {
-  fill: #6610f2;
-}
-
-.services .service-item.item-pink i {
-  color: #f3268c;
-}
-
-.services .service-item.item-pink:hover .icon i {
-  color: #fff;
-}
-
-.services .service-item.item-pink:hover .icon path {
-  fill: #f3268c;
-}
-
-/*--------------------------------------------------------------
-# Testimonials Section
---------------------------------------------------------------*/
-.testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
-}
-
-.testimonials .testimonial-item .testimonial-content {
-  border-left: 3px solid var(--accent-color);
-  padding-left: 30px;
-}
-
-.testimonials .testimonial-item .testimonial-img {
-  border-radius: 50%;
-  border: 4px solid var(--background-color);
-  margin: 0 auto;
-}
-
-.testimonials .testimonial-item h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 10px 0 5px 0;
-}
-
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  margin: 0 0 10px 0;
-}
-
-.testimonials .testimonial-item .stars i {
-  color: #ffc107;
-  margin: 0 1px;
-}
-
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: color-mix(in srgb, var(--accent-color), transparent 50%);
-  font-size: 26px;
-  line-height: 0;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-  transform: scale(-1, -1);
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-}
-
-.testimonials .swiper-wrapper {
-  height: auto;
-}
-
-.testimonials .swiper-pagination {
-  margin-top: 30px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: color-mix(in srgb, var(--default-color), transparent 85%);
-  opacity: 1;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-.contact .info-item+.info-item {
-  margin-top: 40px;
-}
-
-.contact .info-item i {
-  color: var(--accent-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 92%);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
-
-.contact .info-item:hover i {
-  background: var(--accent-color);
-  color: var(--contrast-color);
-}
-
-.contact .php-email-form {
-  height: 100%;
-}
-
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
-}
-
-/*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
 .portfolio-details .portfolio-details-slider img {
@@ -1323,137 +1081,20 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Service Details Section
+# Cards for Portfolio Section
 --------------------------------------------------------------*/
-.service-details .service-box {
-  padding: 20px;
-  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-.service-details .service-box+.service-box {
-  margin-top: 30px;
-}
-
-.service-details .service-box h4 {
-  font-size: 20px;
-  font-weight: 700;
-  border-bottom: 2px solid color-mix(in srgb, var(--default-color), transparent 92%);
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-}
-
-.service-details .services-list a {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  display: flex;
-  align-items: center;
-  padding: 12px 15px;
-  margin-top: 15px;
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
 }
 
-.service-details .services-list a:first-child {
-  margin-top: 0;
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-.service-details .services-list a i {
-  font-size: 16px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-.service-details .services-list a.active {
-  color: var(--contrast-color);
-  background-color: var(--accent-color);
-}
-
-.service-details .services-list a.active i {
-  color: var(--contrast-color);
-}
-
-.service-details .services-list a:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-  color: var(--accent-color);
-}
-
-.service-details .download-catalog a {
-  color: var(--default-color);
-  display: flex;
-  align-items: center;
-  padding: 10px 0;
-  transition: 0.3s;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.service-details .download-catalog a:first-child {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.service-details .download-catalog a:last-child {
-  padding-bottom: 0;
-}
-
-.service-details .download-catalog a i {
-  font-size: 24px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-.service-details .download-catalog a:hover {
-  color: var(--accent-color);
-}
-
-.service-details .help-box {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  margin-top: 30px;
-  padding: 30px 15px;
-}
-
-.service-details .help-box .help-icon {
-  font-size: 48px;
-}
-
-.service-details .help-box h4,
-.service-details .help-box a {
-  color: var(--contrast-color);
-}
-
-.service-details .services-img {
-  margin-bottom: 20px;
-}
-
-.service-details h3 {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.service-details p {
-  font-size: 15px;
-}
-
-.service-details ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.service-details ul li {
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
-}
-
-.service-details ul i {
-  font-size: 20px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
 }
