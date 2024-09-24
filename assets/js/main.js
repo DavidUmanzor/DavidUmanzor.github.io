@@ -18,18 +18,35 @@
   const darkModeToggle = document.getElementById('dark-mode-toggle');
   const darkModeIcon = darkModeToggle.querySelector('i');
   
+  // Function to toggle dark mode
   function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
-    
-    // Change icon based on the current mode
+  
+    // Save user's preference in localStorage
     if (document.body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark-mode');
       darkModeIcon.classList.replace('bi-moon', 'bi-sun');
     } else {
+      localStorage.setItem('theme', 'light-mode');
       darkModeIcon.classList.replace('bi-sun', 'bi-moon');
     }
   }
   
+  // Event listener for the toggle button
   darkModeToggle.addEventListener('click', toggleDarkMode);
+  
+  // Load user's preference on page load
+  window.addEventListener('load', () => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark-mode') {
+      document.body.classList.add('dark-mode');
+      darkModeIcon.classList.replace('bi-moon', 'bi-sun');
+    } else {
+      document.body.classList.remove('dark-mode');
+      darkModeIcon.classList.replace('bi-sun', 'bi-moon');
+    }
+  });
+  
 
   /**
    * Hide mobile nav on same-page/hash links
