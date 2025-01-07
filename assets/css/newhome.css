@@ -1,0 +1,94 @@
+/* Fonts */
+:root {
+	--default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+		"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	--heading-font: "Raleway", sans-serif;
+	--nav-font: "Poppins", sans-serif;
+}
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root {
+	--background-color: #ffffff; /* Background color for the entire website, including individual sections */
+	--default-color: #272829; /* Default color used for the majority of the text content across the entire website */
+	--heading-color: #45505b; /* Color for headings, subheadings and title throughout the website */
+	--accent-color: #0563bb; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+	--surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+	--contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+/* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+:root {
+	--nav-color: #45505b; /* The default color of the main navmenu links */
+	--nav-hover-color: #0563bb; /* Applied to main navmenu links when they are hovered over or active */
+	--nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
+	--nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+	--nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
+	--nav-dropdown-hover-color: #0563bb; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+}
+
+/* */
+
+/* 1) Make sure you reset default body margins to avoid unexpected spacing */
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* 2) Styles for the header element */
+#site-header {
+	position: fixed; /* Keeps the header fixed at the top of the page */
+	top: 0;
+	left: 0;
+	width: 100%; /* Make sure it spans the full page width */
+	z-index: 999; /* Ensures the header stays above other elements */
+	background: transparent; /* Transparent or a translucent background */
+	padding: 1rem 2rem;
+	transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3) If you want a background color to appear on scroll, 
+	 you can toggle a class like .scrolled in JavaScript:
+	 #site-header.scrolled {
+	   background: #ffffff; 
+	   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	 }
+  */
+
+/* 4) Basic reset and styling for the nav list */
+#navmenu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none; /* Remove bullet points */
+	display: flex; /* Place nav items horizontally */
+	gap: 2rem; /* Space between nav items */
+	justify-content: flex-end;
+	align-items: center;
+}
+
+/* 5) Nav links */
+#navmenu a {
+	text-decoration: none;
+	color: var(--nav-color); /* or use any color you’d like */
+	font-family: var(--nav-font, sans-serif);
+	font-weight: 500;
+}
+
+/* On hover or active link, use your accent color: */
+#navmenu a:hover,
+#navmenu a.active {
+	color: var(--nav-hover-color);
+}
+
+section img {
+	display: block;
+	max-width: 110%;
+	height: 100%;
+	margin: 0 auto; /* Optional: center the image horizontally */
+}
+
+main {
+	overflow-x: hidden;
+	overflow: hidden;
+	overflow-y: hidden;
+}
