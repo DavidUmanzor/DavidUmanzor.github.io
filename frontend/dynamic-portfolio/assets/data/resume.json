@@ -1,0 +1,122 @@
+{
+    "name": "David Umanzor",
+    "contact": {
+      "linkedin": "https://linkedin.com/in/david-umanzor",
+      "github": "https://github.com/DavidUmanzor",
+      "email": "deumanzor0@gmail.com",
+      "website": "http://davidumanzor.com",
+      "mobile": "+1-863-529-7685"
+    },
+    "education": {
+      "university": "University of Central Florida",
+      "degree": "Bachelor of Science in Computer Science",
+      "start_date": "Jan 2022",
+      "end_date": "May 2025",
+      "gpa": 3.3
+    },
+    "professional_experience": [
+      {
+        "organization": "University of Central Florida",
+        "position": "Software Engineer Intern",
+        "start_date": "Sep 2024",
+        "end_date": "Nov 2024",
+        "responsibilities": [
+          "Contributed to the development of an Unreal Engine plugin using C++ to interface with OpenAI's API, enabling behavior tree generation and model refinement through AI prompts.",
+          "Implemented blackboard integration to gather environmental data, transforming it into JSON format to be processed by the AI model for behavior tree optimization."
+        ]
+      },
+      {
+        "organization": "CAE USA Inc",
+        "position": "Machine Learning Engineer Co-Op",
+        "start_date": "May 2023",
+        "end_date": "Aug 2024",
+        "projects": [
+          {
+            "name": "Data Processing Pipelines",
+            "details": [
+              "Created a repository for processing column-based data and training models using Sklearn, XGBoost, and LightGBM.",
+              "Utilized Kubeflow and Docker to automate hyperparameter tuning with Ray Tune, optimizing model selection."
+            ]
+          },
+          {
+            "name": "Simulation Agents",
+            "details": [
+              "Implemented a collection of 9 core behaviors and multiple subtrees using Rust and XML for autonomous agents within Computer Generated Forces (CGFs) simulations.",
+              "Contributed to white papers detailing the architecture and documentation for intelligent agents."
+            ]
+          },
+          {
+            "name": "Data Analytics Layer",
+            "details": [
+              "Implemented MinIO, Trino, and Iceberg on Kubernetes using Helm charts, laying the groundwork for a scalable data analytics layer to process simulation data from CGFs.",
+              "Set the stage for future expansion, including UI integration and enhanced data accessibility, as part of a collaborative effort within a 3-person team."
+            ]
+          }
+        ]
+      },
+      {
+        "organization": "Florida A & M University",
+        "position": "Undergraduate Researcher",
+        "start_date": "Jun 2021",
+        "end_date": "Dec 2021",
+        "projects": [
+          {
+            "name": "SMS Spam Detection with Transformers",
+            "details": [
+              "Employed a Natural Language Processing model called DistilBERT to analyze a dataset of spam and non-spam text.",
+              "Used Python libraries (sklearn, NumPy, pandas) to preprocess data and train the model.",
+              "Achieved a high level of accuracy, with a Receiver Operating Characteristic (ROC) Curve of 98% True Positive Rate."
+            ]
+          },
+          {
+            "name": "Identifying ASL with Machine Learning and AI",
+            "details": [
+              "Developed a Convolutional Neural Network using Keras to accurately identify ASL images.",
+              "Performed research using various Python libraries including NumPy, seaborn, and sklearn to preprocess data.",
+              "Showcased findings at the 2022 Florida Undergraduate Regional Conference (FURC)."
+            ]
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "Bloomberg Tech Lab on Campus",
+        "position": "Fellow",
+        "start_date": "Sep 2024",
+        "details": [
+          "Collaborated with Bloomberg engineers in a small group to build an application using RabbitMQ and Docker.",
+          "Utilized Python to design and implement a robust message queue system using RabbitMQ, enhancing real-time data processing and communication between producer and consumer components."
+        ]
+      },
+      {
+        "name": "Campus Connect",
+        "position": "Full-stack Developer",
+        "start_date": "Jan 2024",
+        "end_date": "May 2024",
+        "details": [
+          "Developed a web application using the PERN stack to connect students to local events around their university.",
+          "Employed a React Framework connecting to a PostgreSQL Database hosted on Heroku.",
+          "Implemented complex user permissions and data integrity checks to ensure secure access to resources."
+        ]
+      },
+      {
+        "name": "Fintracker",
+        "position": "Front-end Lead",
+        "start_date": "Sep 2023",
+        "end_date": "Dec 2023",
+        "details": [
+          "Led the front-end development of a web and mobile application using a MERN stack.",
+          "Utilized React with Bootstrap to create a secure and user-friendly interface.",
+          "Enabled users to manage and track their finances for budgeting purposes securely and easily."
+        ]
+      }
+    ],
+    "skills": {
+      "languages": ["Python", "Rust", "Java", "PostgreSQL", "CSS", "HTML5", "JavaScript", "C++"],
+      "libraries": ["Tensorflow", "pandas", "numpy", "scikit-learn", "ray tune"],
+      "frameworks_platforms": ["Bootstrap", "Ionic", "Express.js", "React", "Kubernetes", "Heroku"],
+      "tools": ["Docker", "Firebase", "Google Colab", "Jupyter Notebook", "Unreal Engine"]
+    }
+}
+  
