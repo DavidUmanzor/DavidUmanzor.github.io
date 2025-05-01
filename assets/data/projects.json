@@ -1,0 +1,26 @@
+[
+	{
+		"name": "Campus Connect",
+		"description": "Developed a web application to connect students to local events around their university.",
+		"thumbnail": "assets/img/portfolio/campus-connect/thumbnail.jpg",
+		"techStack": ["React", "Node.js", "PostgreSQL", "Heroku", "Postman"],
+		"projectPage": "forms/campus-connect.html",
+		"githubLink": "https://github.com/DavidUmanzor/Campus-Connect"
+	},
+	{
+		"name": "Study Room Bot",
+		"description": "A bot created to book study rooms.",
+		"thumbnail": "assets/img/portfolio/study-room-bot/thumbnail.jpg",
+		"techStack": ["Python", "Selenium"],
+		"projectPage": "forms/study-room-bot.html",
+		"githubLink": "https://github.com/DavidUmanzor/Study-Room-Bot"
+	},
+	{
+		"name": "Fintracker",
+		"description": "A web application designed to help users track their finances and budget.",
+		"thumbnail": "assets/img/portfolio/fintracker/thumbnail.jpg",
+		"techStack": ["React", "Node.js", "MongoDB", "Heroku", "Postman"],
+		"projectPage": "forms/fintracker.html",
+		"githubLink": "https://github.com/5yntaxError404/FinTracker"
+	}
+]
