@@ -1,26 +1,179 @@
 [
 	{
+		"name": "Project Mercury",
+		"category": "Backend Development",
+		"tags": ["Backend", "DevOps", "AWS"],
+		"date": "Aug 2024 - May 2025",
+		"shortHook": "AWS-based email delivery system with secure EC2 infrastructure",
+		"thumbnail": "assets/img/portfolio/project-mercury/thumbnail.jpg",
+		"techStack": ["AWS", "EC2", "OpenScap", "PostgreSQL", "Amazon SES", "PGadmin"],
+		"description": {
+			"overview": "Project Mercury is a secure email delivery system built on AWS infrastructure.",
+			"stackDescription": "The system utilizes AWS services including EC2, SES, and PostgreSQL for robust email delivery and data management.",
+			"role": "As Backend Developer & Project Manager, I led the infrastructure security implementation and email delivery system migration.",
+			"features": ["Secure EC2 Instance", "Email Delivery Migration", "Database Management"]
+		},
+		"onGithub": false,
+		"githubLink": "",
+		"isLive": false,
+		"liveLink": ""
+	},
+	{
+		"name": "Theta Tau Family Trees",
+		"category": "Web Application",
+		"tags": ["Full Stack", "Angular", "Firebase"],
+		"date": "Jan 2025 - Apr 2025",
+		"shortHook": "Mobile-responsive web app for managing fraternity family trees with secure authentication.",
+		"thumbnail": "assets/img/portfolio/theta-tau/thumbnail.jpg",
+		"techStack": ["Angular", "Firebase", "Netlify", "GitHub Actions"],
+		"description": {
+			"overview": "A web application for visualizing and managing fraternity family trees with secure access control.",
+			"stackDescription": "Built with Angular and Firebase, deployed on Netlify with automated CI/CD pipeline.",
+			"role": "Solo developer responsible for full system architecture, development, and deployment.",
+			"features": ["Mobile Responsive Design", "Firebase Authentication", "Automated CI/CD", "Dynamic Whitelist"]
+		},
+		"onGithub": false,
+		"githubLink": "",
+		"isLive": false,
+		"liveLink": ""
+	},
+	{
+		"name": "Bloomberg Message Queue System",
+		"category": "Backend Development",
+		"tags": ["Backend", "Message Queue"],
+		"date": "Sep 2024",
+		"shortHook": "Real-time data communication system using RabbitMQ and Docker.",
+		"thumbnail": "assets/img/portfolio/bloomberg/thumbnail.jpg",
+		"techStack": ["Python", "RabbitMQ", "Docker"],
+		"description": {
+			"overview": "A message queue system developed during Bloomberg Tech Lab fellowship.",
+			"stackDescription": "Implemented using Python, RabbitMQ, and Docker for efficient real-time data communication.",
+			"role": "One of 40 selected fellows working with Bloomberg engineers.",
+			"features": ["Real-time Communication", "Message Queue System", "Containerization"]
+		},
+		"onGithub": false,
+		"githubLink": "",
+		"isLive": false,
+		"liveLink": ""
+	},
+	{
 		"name": "Campus Connect",
-		"description": "Developed a web application to connect students to local events around their university.",
+		"category": "Web Application",
+		"tags": ["Full Stack"],
+		"date": "May, 2024",
+		"shortHook": "Developed a web application to connect students to local events around their university.",
 		"thumbnail": "assets/img/portfolio/campus-connect/thumbnail.jpg",
 		"techStack": ["React", "Node.js", "PostgreSQL", "Heroku", "Postman"],
 		"projectPage": "forms/campus-connect.html",
-		"githubLink": "https://github.com/DavidUmanzor/Campus-Connect"
+		"description": {
+			"overview": "Campus Connect is a web application designed to allow students to see events from their campuses and any campus around the world.",
+			"stackDescription": "The web app uses a PERN stack; PostgreSQL for a relational database, Express.js a framework for Node.js, React.js to handle the user interfaces rendering.",
+			"role": "I was the full stack developer for this project and created both the Frontend and Backend of the website which had multiple features, and a large database functionality. This project tested my ability to great a large and secure database as well as a attractive and intuitive frontend.",
+			"features": ["Password Hashing", "CRUD Actions", "Maps Intergration"]
+		},
+		"onGithub": true,
+		"githubLink": "https://github.com/DavidUmanzor/Campus-Connect",
+		"isLive": false,
+		"liveLink": ""
 	},
 	{
 		"name": "Study Room Bot",
-		"description": "A bot created to book study rooms.",
+		"category": "Script",
+		"tags": ["Web Scraping"],
+		"date": "May, 2024",
+		"shortHook": "A bot created to book study rooms.",
 		"thumbnail": "assets/img/portfolio/study-room-bot/thumbnail.jpg",
 		"techStack": ["Python", "Selenium"],
 		"projectPage": "forms/study-room-bot.html",
-		"githubLink": "https://github.com/DavidUmanzor/Study-Room-Bot"
+		"description": {
+			"overview": "A Python-based automation tool for booking study rooms using Selenium for web scraping.",
+			"stackDescription": "Built with Python and Selenium WebDriver for automated browser interaction.",
+			"role": "Solo developer responsible for creating an automated solution for booking study rooms.",
+			"features": ["Web Scraping", "Automated Booking", "Browser Automation"]
+		},
+		"onGithub": true,
+		"githubLink": "https://github.com/DavidUmanzor/Study-Room-Bot",
+		"isLive": false,
+		"liveLink": ""
 	},
 	{
 		"name": "Fintracker",
-		"description": "A web application designed to help users track their finances and budget.",
+		"category": "Web Application",
+		"tags": ["Full Stack"],
+		"date": "May, 2024",
+		"shortHook": "A web application designed to help users track their finances and budget.",
 		"thumbnail": "assets/img/portfolio/fintracker/thumbnail.jpg",
 		"techStack": ["React", "Node.js", "MongoDB", "Heroku", "Postman"],
 		"projectPage": "forms/fintracker.html",
-		"githubLink": "https://github.com/5yntaxError404/FinTracker"
+		"description": {
+			"overview": "A full-stack web application for personal finance tracking and budgeting.",
+			"stackDescription": "Built with MERN stack (MongoDB, Express.js, React.js, Node.js) for a modern and scalable application.",
+			"role": "Full stack developer responsible for both frontend and backend development, including database design and API implementation.",
+			"features": ["User Authentication", "Expense Tracking", "Budget Management", "Data Visualization"]
+		},
+		"onGithub": true,
+		"githubLink": "https://github.com/5yntaxError404/FinTracker",
+		"isLive": false,
+		"liveLink": ""
+	},
+	{
+		"name": "The Vault",
+		"category": "Web Application",
+		"tags": ["Full Stack"],
+		"date": "May, 2024",
+		"shortHook": "A web application designed to help users manage their contacts.",
+		"thumbnail": "assets/img/portfolio/the-vault/thumbnail.jpg",
+		"techStack": ["Linux", "Apache", "MySQL", "PHP", "Digital Ocean"],
+		"projectPage": "forms/thevault.html",
+		"description": {
+			"overview": "A contact management system built with LAMP stack for secure and efficient contact organization.",
+			"stackDescription": "Implemented using Linux, Apache, MySQL, and PHP (LAMP stack) with deployment on Digital Ocean.",
+			"role": "Full stack developer responsible for system architecture, database design, and deployment.",
+			"features": ["Contact Management", "Secure Authentication", "Data Encryption", "Cloud Hosting"]
+		},
+		"onGithub": false,
+		"githubLink": "",
+		"isLive": false,
+		"liveLink": ""
+	},
+	{
+		"name": "Spam SMS Detection",
+		"category": "AI/ML",
+		"tags": ["Machine Learning", "NLP"],
+		"date": "Jun 2021 - Dec 2021",
+		"shortHook": "Training an Hugging Face DistilBERT model to detect spam SMS.",
+		"thumbnail": "assets/img/portfolio/spam-detection/thumbnail.jpg",
+		"techStack": ["Python", "NumPy", "Pandas", "TensorFlow", "Hugging Face"],
+		"projectPage": "forms/spamdetection.html",
+		"description": {
+			"overview": "A machine learning project using DistilBERT for SMS spam detection with high accuracy.",
+			"stackDescription": "Implemented using Python, Hugging Face's DistilBERT, and various data science libraries.",
+			"role": "Researcher responsible for model development, training, and evaluation.",
+			"features": ["NLP Model", "Text Classification", "High Accuracy Detection", "Model Evaluation"]
+		},
+		"onGithub": true,
+		"githubLink": "https://github.com/DavidUmanzor/Identifying-SPAM-Using-Transformers",
+		"isLive": false,
+		"liveLink": ""
+	},
+	{
+		"name": "ASL Recognition",
+		"category": "AI/ML",
+		"tags": ["Machine Learning", "Computer Vision"],
+		"date": "Jun 2021 - Dec 2021",
+		"shortHook": "A program to train a model using CNN methods to accurately detect the letter in ASL.",
+		"thumbnail": "assets/img/portfolio/asl-recognition/thumbnail.jpg",
+		"techStack": ["Python", "NumPy", "Pandas", "TensorFlow"],
+		"projectPage": "forms/identifyingasl.html",
+		"description": {
+			"overview": "A computer vision project using Convolutional Neural Networks for American Sign Language recognition.",
+			"stackDescription": "Built with Python and TensorFlow, utilizing CNN architecture for image classification.",
+			"role": "Researcher responsible for model development, training, and evaluation.",
+			"features": ["Image Classification", "CNN Architecture", "Real-time Recognition", "Model Training"]
+		},
+		"onGithub": true,
+		"githubLink": "https://github.com/DavidUmanzor/Identifying-ASL-Using-CNN",
+		"isLive": false,
+		"liveLink": ""
 	}
 ]

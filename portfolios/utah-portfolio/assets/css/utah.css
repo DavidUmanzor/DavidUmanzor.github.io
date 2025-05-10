@@ -298,7 +298,7 @@ h6 {
   cursor: pointer;
   position: fixed;
   top: 15px;
-  right: 15px;
+  left: 15px;
   z-index: 9999;
   transition: background-color 0.3s;
 }
@@ -700,31 +700,60 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+.about {
+  padding: 60px 0;
+}
+
+.about .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about .content {
+  text-align: center;
+  padding: 0 15px;
+}
+
 .about .content h2 {
+  font-size: 2.5rem;
   font-weight: 700;
-  font-size: 24px;
+  margin-bottom: 1rem;
+  color: var(--heading-color);
+}
+
+.about .content p {
+  margin-bottom: 1.5rem;
 }
 
 .about .content ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .about .content ul li {
-  margin-bottom: 20px;
+  padding: 0.5rem 0;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .about .content ul strong {
-  margin-right: 10px;
+  margin-right: 0.5rem;
+  color: var(--heading-color);
 }
 
 .about .content ul i {
-  font-size: 16px;
-  margin-right: 5px;
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
   color: var(--accent-color);
-  line-height: 0;
+}
+
+.about .img-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /*--------------------------------------------------------------
@@ -1135,4 +1164,83 @@ div.tech-stack img{
   width: 50px;
   height: 50px;
   padding-bottom: 10px;
+}
+
+/* Header Buttons */
+.header-buttons {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.home-button,
+#dark-mode-toggle {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border: none;
+  border-radius: 50px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 24px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+}
+
+.home-button:hover,
+#dark-mode-toggle:hover {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  color: var(--contrast-color);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Button */
+#dark-mode-toggle i {
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode #dark-mode-toggle {
+  background-color: #ffb74d;
+  color: #272829;
+}
+
+body.dark-mode #dark-mode-toggle i {
+  transform: rotate(180deg);
+}
+
+/* Header Toggle Button */
+.header .header-toggle {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 9999;
+  transition: background-color 0.3s;
+}
+
+.header .header-toggle:hover {
+  color: var(--contrast-color);
+  background-color: color-mix(in srgb, var(--accent-color) 90%, white 15%);
+}
+
+@media (max-width: 1199px) {
+  .header-buttons {
+    right: 70px;
+  }
 }

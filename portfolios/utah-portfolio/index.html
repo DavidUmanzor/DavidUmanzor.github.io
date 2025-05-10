@@ -35,9 +35,14 @@
   <!-- End Google Tag Manager (noscript) -->
 
   <header id="header" class="header d-flex flex-column justify-content-center">
-    <button id="dark-mode-toggle">
-      <i class="bi bi-moon"></i> <!-- Using a Bootstrap icon here -->
-    </button>
+    <div class="header-buttons">
+      <a href="../../index.html" class="home-button" title="Return to Main Portfolio">
+        <i class="bi bi-house-fill"></i>
+      </a>
+      <button id="dark-mode-toggle" title="Toggle Dark Mode">
+        <i class="bi bi-moon"></i>
+      </button>
+    </div>
 
     <i class="header-toggle d-xl-none bi bi-list"></i>
 
@@ -78,45 +83,12 @@
     </section><!-- /Hero Section -->
 
     <!-- About Section -->
-
+    <section id="about" class="about section">
       <!-- Section Title -->
-      <div id="about" class="container section-title" data-aos="fade-up">
+      <div class="container section-title" data-aos="fade-up">
         <h2>About</h2>
         <p>Hello! My name is David, I am an aspiring developer who is passionate about AI, Machine Learning and backend work. I enjoy working on projects in my free time between testing full stack applications and open source contributions.</p>
       </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="../assets/img/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>Data Scientist &amp; Software Developer</h2>
-            <p class="fst-italic py-3">
-            </p>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>30 Sept 2000</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+863 529 7685</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Orlando, USA</span></li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>23</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelors</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>deumanzor0@gmail.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
     </section><!-- /About Section -->
 
     <!-- Resume Section -->
@@ -191,7 +163,7 @@
               <ul>
                 <li>Collaborated with other officers to develop and execute Honors in Action (HIA)</li>
                 <li>Hosted the 2021 Annual Florida Regional Conference for Phi Theta Kappa, facilitating engaging workshops and guest speakers</li>
-                <li>Contributed to the development of the college’s quality enhancement plan to maintain accreditation</li>
+                <li>Contributed to the development of the college's quality enhancement plan to maintain accreditation</li>
                 <li>Awarded <a href="https://www.floridacollegesystemfoundation.org/_files/ugd/005c49_6a8269e240ab441795a68d11e4dd278f.pdf">2022 All-Florida Academic Team</a></li>
               </ul>
               </p>
