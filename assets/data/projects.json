@@ -24,7 +24,7 @@
 		"tags": ["Full Stack", "Angular", "Firebase"],
 		"date": "Jan 2025 - Apr 2025",
 		"shortHook": "Mobile-responsive web app for managing fraternity family trees with secure authentication.",
-		"thumbnail": "assets/img/portfolio/theta-tau/thumbnail.jpg",
+		"thumbnail": "assets/img/portfolio/theta-tau/thumbnail.png",
 		"techStack": ["Angular", "Firebase", "Netlify", "GitHub Actions"],
 		"description": {
 			"overview": "A web application for visualizing and managing fraternity family trees with secure access control.",
