@@ -5,7 +5,7 @@
 		"tags": ["Backend", "DevOps", "AWS"],
 		"date": "Aug 2024 - May 2025",
 		"shortHook": "AWS-based email delivery system with secure EC2 infrastructure",
-		"thumbnail": "assets/img/portfolio/project-mercury/thumbnail.jpg",
+		"thumbnail": "assets/img/portfolio/project-mercury/thumbnail.png",
 		"techStack": ["AWS", "EC2", "OpenScap", "PostgreSQL", "Amazon SES", "PGadmin"],
 		"description": {
 			"overview": "Project Mercury is a secure email delivery system built on AWS infrastructure.",
@@ -34,27 +34,8 @@
 		},
 		"onGithub": false,
 		"githubLink": "",
-		"isLive": false,
-		"liveLink": ""
-	},
-	{
-		"name": "Bloomberg Message Queue System",
-		"category": "Backend Development",
-		"tags": ["Backend", "Message Queue"],
-		"date": "Sep 2024",
-		"shortHook": "Real-time data communication system using RabbitMQ and Docker.",
-		"thumbnail": "assets/img/portfolio/bloomberg/thumbnail.jpg",
-		"techStack": ["Python", "RabbitMQ", "Docker"],
-		"description": {
-			"overview": "A message queue system developed during Bloomberg Tech Lab fellowship.",
-			"stackDescription": "Implemented using Python, RabbitMQ, and Docker for efficient real-time data communication.",
-			"role": "One of 40 selected fellows working with Bloomberg engineers.",
-			"features": ["Real-time Communication", "Message Queue System", "Containerization"]
-		},
-		"onGithub": false,
-		"githubLink": "",
-		"isLive": false,
-		"liveLink": ""
+		"isLive": true,
+		"liveLink": "https://rhogammaframilytree.netlify.app/"
 	},
 	{
 		"name": "Campus Connect",
@@ -91,7 +72,7 @@
 			"role": "Solo developer responsible for creating an automated solution for booking study rooms.",
 			"features": ["Web Scraping", "Automated Booking", "Browser Automation"]
 		},
-		"onGithub": true,
+		"onGithub": false,
 		"githubLink": "https://github.com/DavidUmanzor/Study-Room-Bot",
 		"isLive": false,
 		"liveLink": ""
@@ -117,32 +98,12 @@
 		"liveLink": ""
 	},
 	{
-		"name": "The Vault",
-		"category": "Web Application",
-		"tags": ["Full Stack"],
-		"date": "May, 2024",
-		"shortHook": "A web application designed to help users manage their contacts.",
-		"thumbnail": "assets/img/portfolio/the-vault/thumbnail.jpg",
-		"techStack": ["Linux", "Apache", "MySQL", "PHP", "Digital Ocean"],
-		"projectPage": "forms/thevault.html",
-		"description": {
-			"overview": "A contact management system built with LAMP stack for secure and efficient contact organization.",
-			"stackDescription": "Implemented using Linux, Apache, MySQL, and PHP (LAMP stack) with deployment on Digital Ocean.",
-			"role": "Full stack developer responsible for system architecture, database design, and deployment.",
-			"features": ["Contact Management", "Secure Authentication", "Data Encryption", "Cloud Hosting"]
-		},
-		"onGithub": false,
-		"githubLink": "",
-		"isLive": false,
-		"liveLink": ""
-	},
-	{
 		"name": "Spam SMS Detection",
 		"category": "AI/ML",
 		"tags": ["Machine Learning", "NLP"],
 		"date": "Jun 2021 - Dec 2021",
 		"shortHook": "Training an Hugging Face DistilBERT model to detect spam SMS.",
-		"thumbnail": "assets/img/portfolio/spam-detection/thumbnail.jpg",
+		"thumbnail": "assets/img/portfolio/spam-detection/thumbnail.png",
 		"techStack": ["Python", "NumPy", "Pandas", "TensorFlow", "Hugging Face"],
 		"projectPage": "forms/spamdetection.html",
 		"description": {
@@ -162,7 +123,7 @@
 		"tags": ["Machine Learning", "Computer Vision"],
 		"date": "Jun 2021 - Dec 2021",
 		"shortHook": "A program to train a model using CNN methods to accurately detect the letter in ASL.",
-		"thumbnail": "assets/img/portfolio/asl-recognition/thumbnail.jpg",
+		"thumbnail": "assets/img/portfolio/asl-recognition/thumbnail.png",
 		"techStack": ["Python", "NumPy", "Pandas", "TensorFlow"],
 		"projectPage": "forms/identifyingasl.html",
 		"description": {

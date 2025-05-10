@@ -1,0 +1,60 @@
+[
+    {
+        "name": "Bloomberg Message Queue System",
+        "category": "Backend Development",
+        "tags": ["Backend", "Message Queue"],
+        "date": "Sep 2024",
+        "shortHook": "Real-time data communication system using RabbitMQ and Docker.",
+        "thumbnail": "assets/img/portfolio/bloomberg/thumbnail.jpg",
+        "techStack": ["Python", "RabbitMQ", "Docker"],
+        "description": {
+            "overview": "A message queue system developed during Bloomberg Tech Lab fellowship.",
+            "stackDescription": "Implemented using Python, RabbitMQ, and Docker for efficient real-time data communication.",
+            "role": "One of 40 selected fellows working with Bloomberg engineers.",
+            "features": ["Real-time Communication", "Message Queue System", "Containerization"]
+        },
+        "onGithub": false,
+        "githubLink": "",
+        "isLive": false,
+        "liveLink": ""
+    },
+    {
+        "name": "Bloomberg Message Queue System",
+        "category": "Backend Development",
+        "tags": ["Backend", "Message Queue"],
+        "date": "Sep 2024",
+        "shortHook": "Real-time data communication system using RabbitMQ and Docker.",
+        "thumbnail": "assets/img/portfolio/bloomberg/thumbnail.jpg",
+        "techStack": ["Python", "RabbitMQ", "Docker"],
+        "description": {
+            "overview": "A message queue system developed during Bloomberg Tech Lab fellowship.",
+            "stackDescription": "Implemented using Python, RabbitMQ, and Docker for efficient real-time data communication.",
+            "role": "One of 40 selected fellows working with Bloomberg engineers.",
+            "features": ["Real-time Communication", "Message Queue System", "Containerization"]
+        },
+        "onGithub": false,
+        "githubLink": "",
+        "isLive": false,
+        "liveLink": ""
+    },
+    {
+        "name": "The Vault",
+        "category": "Web Application",
+        "tags": ["Full Stack"],
+        "date": "May, 2024",
+        "shortHook": "A web application designed to help users manage their contacts.",
+        "thumbnail": "assets/img/portfolio/the-vault/thumbnail.jpg",
+        "techStack": ["Linux", "Apache", "MySQL", "PHP", "Digital Ocean"],
+        "projectPage": "forms/thevault.html",
+        "description": {
+            "overview": "A contact management system built with LAMP stack for secure and efficient contact organization.",
+            "stackDescription": "Implemented using Linux, Apache, MySQL, and PHP (LAMP stack) with deployment on Digital Ocean.",
+            "role": "Full stack developer responsible for system architecture, database design, and deployment.",
+            "features": ["Contact Management", "Secure Authentication", "Data Encryption", "Cloud Hosting"]
+        },
+        "onGithub": false,
+        "githubLink": "",
+        "isLive": false,
+        "liveLink": ""
+    }
+]
