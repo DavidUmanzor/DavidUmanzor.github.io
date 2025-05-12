@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>About Me - David Umanzor</title>
+		<meta content="" name="description" />
+		<meta content="" name="keywords" />
+
+		<!-- Favicons -->
+		<link href="assets/img/favicon.png" rel="icon" />
+		<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com" rel="preconnect" />
+		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Vendor CSS Files -->
+		<link
+			href="assets/vendor/bootstrap/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link href="index.css" rel="stylesheet" />
+		<link href="assets/css/binary.css" rel="stylesheet" />
+		<style>
+			.terminal-window {
+				background: rgba(0, 0, 0, 0.8);
+				border: 1px solid var(--accent-color);
+				border-radius: 10px;
+				padding: 2rem;
+				margin: 2rem auto;
+				max-width: 800px;
+				box-shadow: 0 0 20px rgba(0, 255, 28, 0.2);
+			}
+
+			.terminal-header {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				margin-bottom: 1.5rem;
+				padding-bottom: 0.5rem;
+				border-bottom: 1px solid var(--accent-color);
+			}
+
+			.terminal-button {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+			}
+
+			.terminal-button.red { background: #ff5f56; }
+			.terminal-button.yellow { background: #ffbd2e; }
+			.terminal-button.green { background: #27c93f; }
+
+			.terminal-title {
+				color: var(--accent-color);
+				font-family: monospace;
+				font-size: 0.9rem;
+				margin-left: 1rem;
+			}
+
+			.terminal-content {
+				font-family: 'Courier New', monospace;
+				line-height: 1.6;
+			}
+
+			.terminal-line {
+				margin-bottom: 1rem;
+				opacity: 0;
+				animation: fadeIn 0.5s ease forwards;
+			}
+
+			.terminal-line:nth-child(1) { animation-delay: 0.2s; }
+			.terminal-line:nth-child(2) { animation-delay: 0.4s; }
+			.terminal-line:nth-child(3) { animation-delay: 0.6s; }
+			.terminal-line:nth-child(4) { animation-delay: 0.8s; }
+			.terminal-line:nth-child(5) { animation-delay: 1s; }
+
+			@keyframes fadeIn {
+				from { opacity: 0; transform: translateY(10px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+
+			.prompt {
+				color: var(--accent-color);
+				margin-right: 0.5rem;
+			}
+
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1rem;
+				margin-top: 2rem;
+			}
+
+			.skill-category {
+				background: rgba(0, 255, 28, 0.1);
+				padding: 1rem;
+				border-radius: 5px;
+				border: 1px solid var(--accent-color);
+			}
+
+			.skill-category h3 {
+				color: var(--accent-color);
+				margin-bottom: 1rem;
+				font-size: 1.1rem;
+			}
+
+			.skill-list {
+				list-style: none;
+				padding: 0;
+			}
+
+			.skill-list li {
+				margin-bottom: 0.5rem;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.skill-list li::before {
+				content: ">";
+				color: var(--accent-color);
+			}
+
+			/* Binary background styles */
+			.binary-waves {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+
+			.content {
+				position: relative;
+				z-index: 1;
+				background: transparent;
+			}
+
+			.back-button {
+				display: none;
+			}
+
+			#site-header {
+				background: rgba(0, 0, 0, 0.9);
+				border-bottom: 1px solid var(--accent-color);
+				padding: 1rem 0;
+				position: fixed;
+				width: 100%;
+				top: 0;
+				z-index: 1000;
+			}
+
+			#navmenu {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+
+			#navmenu ul {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			#navmenu a {
+				color: #fff;
+				text-decoration: none;
+				font-family: 'Courier New', monospace;
+				font-size: 0.9rem;
+				padding: 0.5rem 1rem;
+				border: 1px solid transparent;
+				transition: all 0.3s ease;
+			}
+
+			#navmenu a:hover {
+				border-color: var(--accent-color);
+				color: var(--accent-color);
+			}
+
+			#navmenu a.active {
+				border-color: var(--accent-color);
+				color: var(--accent-color);
+				background: rgba(0, 255, 28, 0.1);
+			}
+
+			.back-link {
+				margin-right: auto;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.back-link::before {
+				content: "←";
+			}
+
+			.main {
+				margin-top: 5rem;
+				padding: 0 2rem;
+				background: transparent;
+			}
+
+			body {
+				background: transparent;
+				margin: 0;
+				padding: 0;
+			}
+
+			#about {
+				background: transparent;
+			}
+
+			.about {
+				background: transparent;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="canvas" class="binary-waves"></canvas>
+		<div class="content">
+			<!-- Header / Navbar -->
+			<header id="site-header">
+				<nav id="navmenu">
+					<ul>
+						<li><a href="/index.html" class="back-link">Main Portfolio</a></li>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html" class="active">About Me</a></li>
+						<li><a href="portfolio.html">Portfolio</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- About Section -->
+			<main class="main">
+				<section id="about" class="about">
+					<div class="terminal-window">
+						<div class="terminal-header">
+							<div class="terminal-button red"></div>
+							<div class="terminal-button yellow"></div>
+							<div class="terminal-button green"></div>
+							<div class="terminal-title">about_me.sh</div>
+						</div>
+						<div class="terminal-content">
+							<div class="terminal-line">
+								<span class="prompt">$</span> cat about.txt
+							</div>
+							<div class="terminal-line">
+								Hello! I'm David Umanzor, a passionate software developer and data scientist.
+								I specialize in creating robust, scalable applications and solving complex problems
+								using cutting-edge technologies.
+							</div>
+							<div class="terminal-line">
+								My journey in tech has led me to work on various exciting projects,
+								from web applications to machine learning solutions. I'm particularly
+								interested in backend technologies and data science.
+							</div>
+							<div class="terminal-line">
+								<span class="prompt">$</span> ls skills/
+							</div>
+							<div class="skills-grid">
+								<div class="skill-category">
+									<h3>Languages</h3>
+									<ul class="skill-list">
+										<li>Python</li>
+										<li>JavaScript</li>
+										<li>Java</li>
+										<li>C++</li>
+									</ul>
+								</div>
+								<div class="skill-category">
+									<h3>Web Development</h3>
+									<ul class="skill-list">
+										<li>React</li>
+										<li>Node.js</li>
+										<li>Express</li>
+										<li>MongoDB</li>
+									</ul>
+								</div>
+								<div class="skill-category">
+									<h3>Data Science</h3>
+									<ul class="skill-list">
+										<li>TensorFlow</li>
+										<li>Pandas</li>
+										<li>NumPy</li>
+										<li>Scikit-learn</li>
+									</ul>
+								</div>
+								<div class="skill-category">
+									<h3>Tools & Others</h3>
+									<ul class="skill-list">
+										<li>Git</li>
+										<li>Docker</li>
+										<li>AWS</li>
+										<li>Linux</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<script src="assets/js/binary.js"></script>
+	</body>
+</html>

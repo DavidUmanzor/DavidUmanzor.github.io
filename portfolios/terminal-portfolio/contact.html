@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Contact - David Umanzor</title>
+		<meta content="" name="description" />
+		<meta content="" name="keywords" />
+
+		<!-- Favicons -->
+		<link href="assets/img/favicon.png" rel="icon" />
+		<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com" rel="preconnect" />
+		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Vendor CSS Files -->
+		<link
+			href="assets/vendor/bootstrap/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link href="index.css" rel="stylesheet" />
+		<link href="assets/css/binary.css" rel="stylesheet" />
+		<style>
+			.terminal-window {
+				background: rgba(0, 0, 0, 0.8);
+				border: 1px solid var(--accent-color);
+				border-radius: 10px;
+				padding: 2rem;
+				margin: 2rem auto;
+				max-width: 800px;
+				box-shadow: 0 0 20px rgba(0, 255, 28, 0.2);
+			}
+
+			.terminal-header {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				margin-bottom: 1.5rem;
+				padding-bottom: 0.5rem;
+				border-bottom: 1px solid var(--accent-color);
+			}
+
+			.terminal-button {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+			}
+
+			.terminal-button.red { background: #ff5f56; }
+			.terminal-button.yellow { background: #ffbd2e; }
+			.terminal-button.green { background: #27c93f; }
+
+			.terminal-title {
+				color: var(--accent-color);
+				font-family: monospace;
+				font-size: 0.9rem;
+				margin-left: 1rem;
+			}
+
+			.terminal-content {
+				font-family: 'Courier New', monospace;
+				line-height: 1.6;
+			}
+
+			.contact-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+				margin-top: 2rem;
+			}
+
+			.contact-item {
+				background: rgba(0, 255, 28, 0.1);
+				border: 1px solid var(--accent-color);
+				border-radius: 5px;
+				padding: 1.5rem;
+				transition: all 0.3s ease;
+			}
+
+			.contact-item:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 5px 15px rgba(0, 255, 28, 0.2);
+			}
+
+			.contact-icon {
+				width: 50px;
+				height: 50px;
+				background: var(--accent-color);
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.5rem;
+				margin-bottom: 1rem;
+			}
+
+			.contact-title {
+				color: var(--accent-color);
+				font-size: 1.2rem;
+				margin-bottom: 0.5rem;
+			}
+
+			.contact-info {
+				color: #fff;
+				font-size: 0.9rem;
+			}
+
+			.contact-link {
+				color: var(--accent-color);
+				text-decoration: none;
+				display: inline-block;
+				margin-top: 0.5rem;
+			}
+
+			.contact-link:hover {
+				text-decoration: underline;
+			}
+
+			.typing-animation {
+				overflow: hidden;
+				border-right: 2px solid var(--accent-color);
+				white-space: nowrap;
+				margin: 0 auto;
+				animation: typing 3.5s steps(40, end),
+						   blink-caret 0.75s step-end infinite;
+			}
+
+			@keyframes typing {
+				from { width: 0 }
+				to { width: 100% }
+			}
+
+			@keyframes blink-caret {
+				from, to { border-color: transparent }
+				50% { border-color: var(--accent-color) }
+			}
+
+			.back-button {
+				display: none;
+			}
+
+			#site-header {
+				background: rgba(0, 0, 0, 0.9);
+				border-bottom: 1px solid var(--accent-color);
+				padding: 1rem 0;
+				position: fixed;
+				width: 100%;
+				top: 0;
+				z-index: 1000;
+			}
+
+			#navmenu {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+
+			#navmenu ul {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			#navmenu a {
+				color: #fff;
+				text-decoration: none;
+				font-family: 'Courier New', monospace;
+				font-size: 0.9rem;
+				padding: 0.5rem 1rem;
+				border: 1px solid transparent;
+				transition: all 0.3s ease;
+			}
+
+			#navmenu a:hover {
+				border-color: var(--accent-color);
+				color: var(--accent-color);
+			}
+
+			#navmenu a.active {
+				border-color: var(--accent-color);
+				color: var(--accent-color);
+				background: rgba(0, 255, 28, 0.1);
+			}
+
+			.back-link {
+				margin-right: auto;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.back-link::before {
+				content: "←";
+			}
+
+			.main {
+				margin-top: 5rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="canvas" class="binary-waves"></canvas>
+		<div class="content">
+			<!-- Header / Navbar -->
+			<header id="site-header">
+				<nav id="navmenu">
+					<ul>
+						<li><a href="/index.html" class="back-link">Main Portfolio</a></li>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About Me</a></li>
+						<li><a href="portfolio.html">Portfolio</a></li>
+						<li><a href="contact.html" class="active">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Contact Section -->
+			<main class="main">
+				<section id="contact" class="contact">
+					<div class="container">
+						<div class="terminal-window">
+							<div class="terminal-header">
+								<div class="terminal-button red"></div>
+								<div class="terminal-button yellow"></div>
+								<div class="terminal-button green"></div>
+								<div class="terminal-title">contact.sh</div>
+							</div>
+							<div class="terminal-content">
+								<div class="typing-animation">
+									<span class="prompt">$</span> cat contact.txt
+								</div>
+								<div class="contact-grid">
+									<div class="contact-item">
+										<div class="contact-icon">📧</div>
+										<h3 class="contact-title">Email</h3>
+										<p class="contact-info">deumanzor0@gmail.com</p>
+										<a href="mailto:davidumanzor@gmail.com" class="contact-link">Send Email ↗</a>
+									</div>
+
+									<div class="contact-item">
+										<div class="contact-icon">📱</div>
+										<h3 class="contact-title">Phone</h3>
+										<p class="contact-info">(863) 529-7685</p>
+										<a href="tel:+14075550123" class="contact-link">Call ↗</a>
+									</div>
+
+									<div class="contact-item">
+										<div class="contact-icon">💼</div>
+										<h3 class="contact-title">LinkedIn</h3>
+										<p class="contact-info">David Umanzor</p>
+										<a href="https://www.linkedin.com/in/david-umanzor/" class="contact-link" target="_blank">Connect ↗</a>
+									</div>
+
+									<div class="contact-item">
+										<div class="contact-icon">👨‍💻</div>
+										<h3 class="contact-title">GitHub</h3>
+										<p class="contact-info">DavidUmanzor</p>
+										<a href="https://github.com/DavidUmanzor" class="contact-link" target="_blank">Follow ↗</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<script src="assets/js/binary.js"></script>
+	</body>
+</html>
