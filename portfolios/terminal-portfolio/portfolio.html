@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Portfolio - David Umanzor</title>
+		<meta content="" name="description" />
+		<meta content="" name="keywords" />
+
+		<!-- Favicons -->
+		<link href="assets/img/favicon.png" rel="icon" />
+		<link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+		<!-- Fonts -->
+		<link href="https://fonts.googleapis.com" rel="preconnect" />
+		<link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Vendor CSS Files -->
+		<link
+			href="assets/vendor/bootstrap/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<link href="index.css" rel="stylesheet" />
+		<link href="assets/css/binary.css" rel="stylesheet" />
+		<style>
+			.terminal-window {
+				background: rgba(0, 0, 0, 0.8);
+				border: 1px solid var(--accent-color);
+				border-radius: 10px;
+				padding: 2rem;
+				margin: 2rem auto;
+				max-width: 1000px;
+				box-shadow: 0 0 20px rgba(0, 255, 28, 0.2);
+			}
+
+			.terminal-header {
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+				margin-bottom: 1.5rem;
+				padding-bottom: 0.5rem;
+				border-bottom: 1px solid var(--accent-color);
+			}
+
+			.terminal-button {
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+			}
+
+			.terminal-button.red { background: #ff5f56; }
+			.terminal-button.yellow { background: #ffbd2e; }
+			.terminal-button.green { background: #27c93f; }
+
+			.terminal-title {
+				color: var(--accent-color);
+				font-family: monospace;
+				font-size: 0.9rem;
+				margin-left: 1rem;
+			}
+
+			.terminal-content {
+				font-family: 'Courier New', monospace;
+				line-height: 1.6;
+			}
+
+			.project-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2rem;
+				margin-top: 2rem;
+			}
+
+			.project-card {
+				background: rgba(0, 255, 28, 0.1);
+				border: 1px solid var(--accent-color);
+				border-radius: 5px;
+				padding: 1.5rem;
+				transition: all 0.3s ease;
+				cursor: pointer;
+			}
+
+			.project-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 5px 15px rgba(0, 255, 28, 0.2);
+			}
+
+			.project-header {
+				display: flex;
+				align-items: center;
+				gap: 1rem;
+				margin-bottom: 1rem;
+			}
+
+			.project-icon {
+				width: 40px;
+				height: 40px;
+				background: var(--accent-color);
+				border-radius: 5px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 1.5rem;
+			}
+
+			.project-title {
+				color: var(--accent-color);
+				font-size: 1.2rem;
+				margin: 0;
+			}
+
+			.project-description {
+				color: #fff;
+				margin-bottom: 1rem;
+				font-size: 0.9rem;
+			}
+
+			.project-tech {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+			}
+
+			.tech-tag {
+				background: rgba(0, 255, 28, 0.2);
+				color: var(--accent-color);
+				padding: 0.2rem 0.5rem;
+				border-radius: 3px;
+				font-size: 0.8rem;
+			}
+
+			.project-links {
+				display: flex;
+				gap: 1rem;
+				margin-top: 1rem;
+			}
+
+			.project-link {
+				color: var(--accent-color);
+				text-decoration: none;
+				font-size: 0.9rem;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.project-link:hover {
+				text-decoration: underline;
+			}
+
+			.filter-bar {
+				display: flex;
+				gap: 1rem;
+				margin-bottom: 2rem;
+				flex-wrap: wrap;
+			}
+
+			.filter-button {
+				background: rgba(0, 255, 28, 0.1);
+				color: var(--accent-color);
+				border: 1px solid var(--accent-color);
+				padding: 0.5rem 1rem;
+				border-radius: 5px;
+				cursor: pointer;
+				transition: all 0.3s ease;
+			}
+
+			.filter-button:hover,
+			.filter-button.active {
+				background: var(--accent-color);
+				color: #000;
+			}
+
+			.search-box {
+				background: rgba(0, 0, 0, 0.5);
+				border: 1px solid var(--accent-color);
+				color: #fff;
+				padding: 0.5rem 1rem;
+				border-radius: 5px;
+				width: 100%;
+				max-width: 300px;
+				font-family: 'Courier New', monospace;
+			}
+
+			.search-box:focus {
+				outline: none;
+				box-shadow: 0 0 10px rgba(0, 255, 28, 0.3);
+			}
+
+			/* Binary background styles */
+			.binary-waves {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: -1;
+			}
+
+			.content {
+				position: relative;
+				z-index: 1;
+			}
+
+			.back-button {
+				display: none;
+			}
+
+			#site-header {
+				background: rgba(0, 0, 0, 0.9);
+				border-bottom: 1px solid var(--accent-color);
+				padding: 1rem 0;
+				position: fixed;
+				width: 100%;
+				top: 0;
+				z-index: 1000;
+			}
+
+			#navmenu {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+
+			#navmenu ul {
+				display: flex;
+				align-items: center;
+				gap: 2rem;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			#navmenu a {
+				color: #fff;
+				text-decoration: none;
+				font-family: 'Courier New', monospace;
+				font-size: 0.9rem;
+				padding: 0.5rem 1rem;
+				border: 1px solid transparent;
+				transition: all 0.3s ease;
+			}
+
+			#navmenu a:hover {
+				border-color: var(--accent-color);
+				color: var(--accent-color);
+			}
+
+			#navmenu a.active {
+				border-color: var(--accent-color);
+				color: var(--accent-color);
+				background: rgba(0, 255, 28, 0.1);
+			}
+
+			.back-link {
+				margin-right: auto;
+				display: flex;
+				align-items: center;
+				gap: 0.5rem;
+			}
+
+			.back-link::before {
+				content: "←";
+			}
+
+			.main {
+				margin-top: 5rem;
+				padding: 0 2rem;
+				background: transparent;
+			}
+
+			body {
+				background: transparent;
+				margin: 0;
+				padding: 0;
+			}
+
+			.content {
+				position: relative;
+				z-index: 1;
+				background: transparent;
+			}
+
+			#portfolio {
+				background: transparent;
+			}
+
+			.portfolio {
+				background: transparent;
+			}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="canvas" class="binary-waves"></canvas>
+		<div class="content">
+			<!-- Header / Navbar -->
+			<header id="site-header">
+				<nav id="navmenu">
+					<ul>
+						<li><a href="/index.html" class="back-link">Main Portfolio</a></li>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About Me</a></li>
+						<li><a href="portfolio.html" class="active">Portfolio</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Portfolio Section -->
+			<main class="main">
+				<section id="portfolio" class="portfolio">
+					<div class="terminal-window">
+						<div class="terminal-header">
+							<div class="terminal-button red"></div>
+							<div class="terminal-button yellow"></div>
+							<div class="terminal-button green"></div>
+							<div class="terminal-title">projects.sh</div>
+						</div>
+						<div class="terminal-content">
+							<div class="filter-bar">
+								<input type="text" class="search-box" placeholder="Search projects..." />
+								<button class="filter-button active" data-filter="all">All</button>
+								<button class="filter-button" data-filter="web">Web</button>
+								<button class="filter-button" data-filter="ml">ML/AI</button>
+								<button class="filter-button" data-filter="backend">Backend</button>
+							</div>
+							<div class="project-grid">
+								<!-- Projects will be dynamically added here -->
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<script src="assets/js/binary.js"></script>
+		<script>
+			// Fetch projects from root assets
+			console.log('Starting fetch request...');
+			fetch('/assets/data/projects.json')
+				.then(response => {
+					console.log('Response status:', response.status);
+					console.log('Response headers:', response.headers);
+					if (!response.ok) {
+						throw new Error(`HTTP error! status: ${response.status}`);
+					}
+					return response.text(); // First get the raw text
+				})
+				.then(text => {
+					console.log('Raw response text:', text);
+					try {
+						const projects = JSON.parse(text);
+						console.log('Parsed projects:', projects);
+						return projects;
+					} catch (e) {
+						console.error('Error parsing JSON:', e);
+						throw new Error('Invalid JSON format');
+					}
+				})
+				.then(projects => {
+					if (!Array.isArray(projects)) {
+						console.error('Projects is not an array:', typeof projects);
+						throw new Error('Projects data is not an array');
+					}
+
+					console.log('Number of projects:', projects.length);
+					const projectGrid = document.querySelector('.project-grid');
+					if (!projectGrid) {
+						console.error('Project grid element not found!');
+						return;
+					}
+					projectGrid.innerHTML = ''; // Clear existing projects
+
+					if (projects.length === 0) {
+						console.log('No projects found in the JSON file');
+						projectGrid.innerHTML = '<p class="no-projects">No projects available at the moment.</p>';
+						return;
+					}
+
+					projects.forEach((project, index) => {
+						console.log(`Processing project ${index}:`, {
+							name: project.name,
+							description: project.description,
+							category: project.category,
+							tech: project.tech
+						});
+
+						const projectCard = document.createElement('div');
+						projectCard.className = 'project-card';
+						projectCard.dataset.category = project.category || 'other';
+
+						// Create project card content
+						const cardContent = `
+							<div class="project-header">
+								<div class="project-icon">${project.icon || '📦'}</div>
+								<h3 class="project-title">${project.name || 'Untitled Project'}</h3>
+							</div>
+							<p class="project-description">${project.shortHook || 'No description available.'}</p>
+							<div class="project-tech">
+								${Array.isArray(project.techStack) ? project.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join('') : ''}
+							</div>
+							<div class="project-links">
+								${project.onGithub ? `<a href="${project.githubLink}" class="project-link" target="_blank">GitHub ↗</a>` : ''}
+								${project.isLive ? `<a href="${project.liveLink}" class="project-link" target="_blank">Live App ↗</a>` : ''}
+								${project.projectPage ? `<a href="${project.projectPage}" class="project-link">Documentation ↗</a>` : ''}
+							</div>
+						`;
+
+						console.log(`Generated card ${index} content:`, cardContent);
+						projectCard.innerHTML = cardContent;
+
+						// Add click event for project details
+						projectCard.addEventListener('click', () => {
+							// Create modal for project details
+							const modal = document.createElement('div');
+							modal.className = 'project-modal';
+							modal.innerHTML = `
+								<div class="modal-content terminal-window">
+									<div class="terminal-header">
+										<div class="terminal-button red"></div>
+										<div class="terminal-button yellow"></div>
+										<div class="terminal-button green"></div>
+										<div class="terminal-title">project-details.sh</div>
+									</div>
+									<div class="terminal-body">
+										<div class="command-line">
+											<span class="prompt">$</span>
+											<span class="command">cat ${project.name.toLowerCase().replace(/\s+/g, '-')}.json</span>
+										</div>
+										<div class="command-output">
+											<div class="output-line">
+												<span class="output-label">Project:</span>
+												<span class="output-value">${project.name}</span>
+											</div>
+											<div class="output-line">
+												<span class="output-label">Category:</span>
+												<span class="output-value">${project.category}</span>
+											</div>
+											<div class="output-line">
+												<span class="output-label">Date:</span>
+												<span class="output-value">${project.date}</span>
+											</div>
+											<div class="output-line">
+												<span class="output-label">Overview:</span>
+												<span class="output-value">${project.description?.overview || 'No overview available.'}</span>
+											</div>
+											<div class="output-line">
+												<span class="output-label">Stack:</span>
+												<span class="output-value">${project.description?.stackDescription || 'No stack description available.'}</span>
+											</div>
+											<div class="output-line">
+												<span class="output-label">Role:</span>
+												<span class="output-value">${project.description?.role || 'No role information available.'}</span>
+											</div>
+											<div class="output-line">
+												<span class="output-label">Technologies:</span>
+												<span class="output-value">${Array.isArray(project.techStack) ? project.techStack.join(', ') : 'No technologies listed.'}</span>
+											</div>
+											<div class="output-line">
+												<span class="output-label">Features:</span>
+												<div class="output-list">
+													${Array.isArray(project.description?.features) ? project.description.features.map(feature => `
+														<div class="output-item">• ${feature}</div>
+													`).join('') : 'No features listed.'}
+												</div>
+											</div>
+											<div class="output-line">
+												<span class="output-label">Links:</span>
+												<div class="output-links">
+													${project.onGithub ? `<a href="${project.githubLink}" class="terminal-link" target="_blank">[GitHub]</a>` : ''}
+													${project.isLive ? `<a href="${project.liveLink}" class="terminal-link" target="_blank">[Live Demo]</a>` : ''}
+													${project.projectPage ? `<a href="${project.projectPage}" class="terminal-link">[Documentation]</a>` : ''}
+												</div>
+											</div>
+										</div>
+										<div class="command-line">
+											<span class="prompt">$</span>
+											<span class="cursor">█</span>
+										</div>
+									</div>
+								</div>
+							`;
+
+							document.body.appendChild(modal);
+
+							// Add modal styles
+							const style = document.createElement('style');
+							style.textContent = `
+								.project-modal {
+									position: fixed;
+									top: 0;
+									left: 0;
+									width: 100%;
+									height: 100%;
+									background: rgba(0, 0, 0, 0.8);
+									display: flex;
+									justify-content: center;
+									align-items: center;
+									z-index: 1000;
+								}
+
+								.modal-content {
+									background: rgba(0, 0, 0, 0.9);
+									border: 1px solid var(--accent-color);
+									border-radius: 10px;
+									padding: 2rem;
+									max-width: 800px;
+									width: 90%;
+									max-height: 90vh;
+									overflow-y: auto;
+									position: relative;
+									box-shadow: 0 0 20px rgba(0, 255, 28, 0.2);
+								}
+
+								.terminal-body {
+									font-family: 'Courier New', monospace;
+									color: #fff;
+									line-height: 1.6;
+									margin-top: 1rem;
+								}
+
+								.command-line {
+									display: flex;
+									align-items: center;
+									margin-bottom: 1rem;
+								}
+
+								.prompt {
+									color: var(--accent-color);
+									margin-right: 0.5rem;
+								}
+
+								.command {
+									color: #fff;
+								}
+
+								.cursor {
+									color: var(--accent-color);
+									animation: blink 1s infinite;
+								}
+
+								@keyframes blink {
+									50% { opacity: 0; }
+								}
+
+								.command-output {
+									margin: 1rem 0;
+									padding: 1rem;
+									background: rgba(0, 255, 28, 0.1);
+									border-radius: 5px;
+								}
+
+								.output-line {
+									margin-bottom: 0.5rem;
+								}
+
+								.output-label {
+									color: var(--accent-color);
+									margin-right: 0.5rem;
+								}
+
+								.output-value {
+									color: #fff;
+								}
+
+								.output-list {
+									margin-left: 1rem;
+								}
+
+								.output-item {
+									margin-bottom: 0.25rem;
+								}
+
+								.output-links {
+									display: flex;
+									gap: 1rem;
+									margin-top: 0.5rem;
+								}
+
+								.terminal-link {
+									color: var(--accent-color);
+									text-decoration: none;
+									transition: all 0.3s ease;
+								}
+
+								.terminal-link:hover {
+									text-decoration: underline;
+								}
+							`;
+							document.head.appendChild(style);
+
+							// Add typing effect
+							const command = modal.querySelector('.command');
+							const cursor = modal.querySelector('.cursor');
+							const text = command.textContent;
+							command.textContent = '';
+							let i = 0;
+
+							function typeCommand() {
+								if (i < text.length) {
+									command.textContent += text.charAt(i);
+									i++;
+									setTimeout(typeCommand, 50);
+								} else {
+									cursor.style.display = 'none';
+									// Show output with a slight delay
+									setTimeout(() => {
+										const output = modal.querySelector('.command-output');
+										output.style.opacity = '1';
+									}, 500);
+								}
+							}
+
+							// Start typing effect
+							setTimeout(typeCommand, 500);
+
+							// Close modal functionality
+							const closeModal = () => {
+								modal.remove();
+								style.remove();
+							};
+
+							modal.querySelector('.terminal-button.red').addEventListener('click', closeModal);
+							modal.addEventListener('click', (e) => {
+								if (e.target === modal) closeModal();
+							});
+
+							// Add escape key handler
+							document.addEventListener('keydown', function escapeHandler(e) {
+								if (e.key === 'Escape') {
+									closeModal();
+									document.removeEventListener('keydown', escapeHandler);
+								}
+							});
+						});
+
+						projectGrid.appendChild(projectCard);
+					});
+				})
+				.catch(error => {
+					console.error('Error loading projects:', error);
+					const projectGrid = document.querySelector('.project-grid');
+					if (projectGrid) {
+						projectGrid.innerHTML = `
+							<p class="no-projects">
+								Error loading projects. Please try again later.<br>
+								Error details: ${error.message}
+							</p>
+						`;
+					}
+				});
+
+			// Filter functionality
+			const filterButtons = document.querySelectorAll('.filter-button');
+			const projectCards = document.querySelectorAll('.project-card');
+			const searchBox = document.querySelector('.search-box');
+
+			filterButtons.forEach(button => {
+				button.addEventListener('click', () => {
+					// Update active button
+					filterButtons.forEach(btn => btn.classList.remove('active'));
+					button.classList.add('active');
+
+					const filter = button.dataset.filter;
+					filterProjects(filter);
+				});
+			});
+
+			searchBox.addEventListener('input', (e) => {
+				const searchTerm = e.target.value.toLowerCase();
+				filterProjects('all', searchTerm);
+			});
+
+			function filterProjects(category, searchTerm = '') {
+				projectCards.forEach(card => {
+					const cardCategory = card.dataset.category;
+					const cardText = card.textContent.toLowerCase();
+					const matchesCategory = category === 'all' || cardCategory === category;
+					const matchesSearch = searchTerm === '' || cardText.includes(searchTerm);
+
+					if (matchesCategory && matchesSearch) {
+						card.style.display = 'block';
+					} else {
+						card.style.display = 'none';
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
