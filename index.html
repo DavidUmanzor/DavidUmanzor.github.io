@@ -28,6 +28,19 @@
             --border-color: #eee;
             --modal-bg: #ffffff;
             --feature-bg: #f8f9fa;
+            --button-text: #ffffff;
+            --pagination-bg: #f0f0f0;
+            --pagination-text: #2d3436;
+            --disabled-text: #717171;
+            --tag-text: #ffffff;
+            --github-link-bg: #f0f0f0;
+            --github-link-text: #2d3436;
+            --github-link-border: #dddddd;
+            --github-link-hover-bg: #6c5ce7;
+            --github-link-hover-text: #ffffff;
+            --demo-link-bg: #00b894;
+            --demo-link-text: #ffffff;
+            --modal-date-color: #555555;
         }
 
         /* Dark Theme Variables */
@@ -48,6 +61,19 @@
             --border-color: #404040;
             --modal-bg: #2d2d2d;
             --feature-bg: #333333;
+            --button-text: #ffffff;
+            --pagination-bg: #333333;
+            --pagination-text: #ffffff;
+            --disabled-text: #999999;
+            --tag-text: #ffffff;
+            --github-link-bg: #3a3a3a;
+            --github-link-text: #e2e2e2;
+            --github-link-border: #4a4a4a;
+            --github-link-hover-bg: #6c5ce7;
+            --github-link-hover-text: #ffffff;
+            --demo-link-bg: #00b894;
+            --demo-link-text: #ffffff;
+            --modal-date-color: #bbbbbb;
         }
 
         * {
@@ -138,7 +164,7 @@
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            color: white;
+            color: var(--button-text);
             position: relative;
             overflow: hidden;
         }
@@ -217,6 +243,11 @@
             border-radius: 2px;
         }
 
+        /* Enhanced section title contrast for dark mode */
+        [data-theme="dark"] .section-title {
+            color: var(--text-color);
+        }
+
         /* Bio Section */
         #bio {
             background-color: var(--section-bg);
@@ -285,7 +316,7 @@
 
         .skill-tag {
             background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            color: white;
+            color: var(--button-text);
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -338,8 +369,8 @@
         }
 
         .search-box::placeholder {
-            color: var(--text-color);
-            opacity: 0.7;
+            color: var(--disabled-text);
+            opacity: 0.9;
         }
 
         .filter-container {
@@ -363,7 +394,7 @@
             border: none;
             border-radius: 30px;
             background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            color: white;
+            color: var(--button-text);
             cursor: pointer;
             transition: var(--transition);
             font-weight: 500;
@@ -403,13 +434,13 @@
 
         .filter-btn:hover {
             background: var(--gradient-start);
-            color: white;
+            color: var(--button-text);
             transform: translateY(-2px);
         }
 
         .filter-btn.active {
             background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            color: white;
+            color: var(--button-text);
             box-shadow: 0 4px 10px rgba(108,92,231,0.2);
         }
 
@@ -450,7 +481,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--button-text);
             font-size: 3rem;
         }
 
@@ -498,7 +529,7 @@
 
         .project-tag {
             background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            color: white;
+            color: var(--tag-text);
             padding: 0.3rem 0.7rem;
             border-radius: 15px;
             font-size: 0.75rem;
@@ -521,26 +552,21 @@
         }
 
         .github-link {
-            background: var(--card-bg);
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-        }
-
-        [data-theme="dark"] .github-link {
-            background: #333333;
-            border-color: #4a4a4a;
+            background: var(--github-link-bg);
+            color: var(--github-link-text);
+            border: 1px solid var(--github-link-border);
         }
 
         .github-link:hover {
             transform: translateY(-2px);
-            background: var(--gradient-start);
-            color: white;
+            background: var(--github-link-hover-bg);
+            color: var(--github-link-hover-text);
             border-color: transparent;
         }
 
         .demo-link {
-            background: var(--accent-color);
-            color: white;
+            background: var(--demo-link-bg);
+            color: var(--demo-link-text);
         }
 
         .project-links a:hover {
@@ -590,7 +616,7 @@
             right: 0;
             padding: 1.5rem;
             background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.2) 100%);
-            color: white;
+            color: var(--button-text);
         }
 
         .theme-overlay h3 {
@@ -615,8 +641,8 @@
             padding: 0.75rem 1.25rem;
             border: none;
             border-radius: 15px;
-            background: #f0f0f0;
-            color: var(--primary-color);
+            background: var(--pagination-bg);
+            color: var(--pagination-text);
             cursor: pointer;
             transition: var(--transition);
         }
@@ -624,19 +650,20 @@
         .pagination button:hover:not(:disabled),
         .pagination button.active {
             background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            color: white;
+            color: var(--button-text);
             transform: translateY(-2px);
         }
 
         .pagination button:disabled {
-            opacity: 0.5;
+            opacity: 0.7;
             cursor: not-allowed;
+            color: var(--disabled-text);
         }
 
         /* Footer */
         footer {
             background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            color: white;
+            color: var(--button-text);
             padding: 4rem 0;
             text-align: center;
             position: relative;
@@ -663,7 +690,7 @@
         }
 
         .social-links a {
-            color: white;
+            color: var(--button-text);
             font-size: 1.5rem;
             transition: var(--transition);
             opacity: 0.8;
@@ -783,7 +810,7 @@
         }
 
         .modal-date {
-            color: #666;
+            color: var(--modal-date-color);
             font-size: 0.9rem;
         }
 
@@ -854,7 +881,7 @@
 
         .modal-link.primary {
             background: var(--accent-color);
-            color: white;
+            color: var(--button-text);
         }
 
         .modal-link.secondary {
@@ -863,14 +890,9 @@
             border: 1px solid var(--border-color);
         }
 
-        [data-theme="dark"] .modal-link.secondary {
-            background: #333333;
-            border-color: #4a4a4a;
-        }
-
         .modal-link.secondary:hover {
             background: var(--gradient-start);
-            color: white;
+            color: var(--button-text);
             border-color: transparent;
         }
 
@@ -927,18 +949,20 @@
 
         .preview-btn {
             background: var(--gradient-start);
-            color: white;
+            color: var(--button-text);
         }
 
         .download-btn {
-            background: var(--card-bg);
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
+            background: var(--github-link-bg);
+            color: var(--github-link-text);
+            border: 1px solid var(--github-link-border);
         }
 
+        /* Remove hardcoded styles and use CSS variables instead */
         [data-theme="dark"] .download-btn {
-            background: #333333;
-            border-color: #4a4a4a;
+            background: var(--github-link-bg);
+            border-color: var(--github-link-border);
+            color: var(--github-link-text);
         }
 
         .resume-btn:hover {
@@ -947,8 +971,8 @@
         }
 
         .download-btn:hover {
-            background: var(--gradient-start);
-            color: white;
+            background: var(--github-link-hover-bg);
+            color: var(--github-link-hover-text);
             border-color: transparent;
         }
 
@@ -1112,6 +1136,21 @@
                 padding: 1.5rem;
             }
         }
+
+        /* Ensure better focus states for accessibility */
+        a:focus, button:focus, input:focus, select:focus, textarea:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Skip outline for mouse users, only show for keyboard navigation */
+        a:focus:not(:focus-visible), 
+        button:focus:not(:focus-visible), 
+        input:focus:not(:focus-visible), 
+        select:focus:not(:focus-visible), 
+        textarea:focus:not(:focus-visible) {
+            outline: none;
+        }
     </style>
 </head>
 <body>
@@ -1231,13 +1270,6 @@
                     <div class="theme-overlay">
                         <h3>Terminal Theme</h3>
                         <p>Latest and main portfolio</p>
-                    </div>
-                </a>
-                <a href="portfolios/dynamic-portfolio/index.html" class="theme-card">
-                    <img src="https://images.unsplash.com/photo-1712238318704-b4fd7e5db652?q=80&w=1932&auto=format&fit=crop" alt="Dynamic Theme">
-                    <div class="theme-overlay">
-                        <h3>Dynamic Theme</h3>
-                        <p>List of all portfolio projects</p>
                     </div>
                 </a>
             </div>
