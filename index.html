@@ -421,7 +421,8 @@
         }
 
         .project-card {
-            height: 450px;
+            height: auto;
+            max-height: 450px;
             display: flex;
             flex-direction: column;
             background: var(--card-bg);
@@ -438,7 +439,7 @@
         }
 
         .project-image {
-            height: 200px;
+            height: 80px;
             width: 100%;
             object-fit: cover;
             transition: var(--transition);
@@ -461,51 +462,62 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding: 2rem;
+            padding: 0.8rem;
+            gap: 0.25rem;
         }
 
         .project-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.1rem;
             color: var(--text-color);
         }
 
         .project-description {
-            margin: 1rem 0;
-            color: var(--text-color);
-            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            position: relative;
+            margin-top: 0;
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+            line-height: 1.3;
         }
-
+        
+        .project-description.overflow::after {
+            content: none;
+        }
+        
         .project-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
+            gap: 0.3rem;
+            margin-top: 0;
+            margin-bottom: 0.3rem;
         }
 
         .project-tag {
             background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
             color: white;
-            padding: 0.5rem 1rem;
+            padding: 0.3rem 0.7rem;
             border-radius: 15px;
-            font-size: 0.875rem;
+            font-size: 0.75rem;
         }
 
         .project-links {
-            margin-top: 1.5rem;
             display: flex;
-            gap: 1rem;
+            flex-wrap: wrap;
+            gap: 0.3rem;
+            margin-top: 0.3rem;
         }
 
         .project-links a {
-            padding: 0.75rem 1.5rem;
-            border-radius: 20px;
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            flex: 1 1 calc(50% - 0.3rem);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding: 0.4rem;
+            font-size: 0.8rem;
         }
 
         .github-link {
@@ -1219,7 +1231,7 @@
                     <div class="theme-overlay">
                         <h3>Terminal Theme</h3>
                         <p>Latest and main portfolio</p>
-    </div>
+                    </div>
                 </a>
                 <a href="portfolios/dynamic-portfolio/index.html" class="theme-card">
                     <img src="https://images.unsplash.com/photo-1712238318704-b4fd7e5db652?q=80&w=1932&auto=format&fit=crop" alt="Dynamic Theme">
@@ -1501,19 +1513,35 @@
                     const imageHtml = hasImage 
                         ? `<img src="${project.thumbnail}" alt="${project.name}" class="project-image">`
                         : `<div class="project-image no-image">
-                             <i class="fas fa-code"></i>
-                           </div>`;
-                    
+                            <i class="fas fa-code"></i>
+                        </div>`;
+
+                    // ----- NEW TAG-LIMITING LOGIC -----
+                    const maxTags = 3;
+                    const tagsToShow = project.tags.slice(0, maxTags);
+                    const remainingTags = project.tags.length - tagsToShow.length;
+
+                    // always show category first
+                    const tagsHtmlArray = [
+                    `<span class="project-tag">${project.category}</span>`,
+                    ...tagsToShow.map(tag => `<span class="project-tag">${tag}</span>`)
+                    ];
+
+                    if (remainingTags > 0) {
+                    tagsHtmlArray.push(`<span class="project-tag">+${remainingTags} more</span>`);
+                    }
+                    const tagsHtml = tagsHtmlArray.join('');
+                    // -----------------------------------
+
                     projectCard.innerHTML = `
                         ${imageHtml}
                         <div class="project-info">
                             <h3>${project.name}</h3>
                             <div class="project-tags">
-                                <span class="project-tag">${project.category}</span>
-                                ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                            ${tagsHtml}
                             </div>
-                            <p>${project.shortHook}</p>
-                            <div class="project-links">
+                            <p class="project-description">${project.shortHook}</p>
+                            <div class="project-links links">
                                 ${project.onGithub ? 
                                     `<a href="${project.githubLink}" target="_blank" class="github-link">
                                         <i class="fab fa-github"></i>View on GitHub
@@ -1528,9 +1556,7 @@
                         </div>
                     `;
 
-                    // Add click handler for modal
                     projectCard.addEventListener('click', (e) => {
-                        // Don't open modal if clicking on a link
                         if (!e.target.closest('a')) {
                             openModal(project);
                         }
@@ -1541,6 +1567,7 @@
                 
                 renderPagination(filteredProjects);
             }
+
 
             // Search input handler
             searchInput.addEventListener('input', () => {
